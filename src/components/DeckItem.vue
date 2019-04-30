@@ -1,6 +1,8 @@
 <template>
     <div>
-        <CardsList v-for="cards in deck.cards" :cards="cards" :key="cards.id">
+        <CardsList v-for="cards in deck.cards" 
+            :cards="cards" 
+            :key="cards.id">
             <slot :MyCards="cards"></slot>
         </CardsList>
     </div>
