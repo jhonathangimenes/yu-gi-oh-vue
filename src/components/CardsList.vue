@@ -1,7 +1,7 @@
 <template>
     <div>
         <slot>
-            {{ cards }}
+            {{ cards }} a
         </slot>
     </div>
 </template>
