@@ -1,16 +1,16 @@
 <template>
   <div class="container">
-    <CardsList/>
+    <DecksList/>
   </div>
 </template>
 
 <script>
-import CardsList from './components/CardsList.vue'
+import DecksList from './components/DecksList.vue'
 
 export default {
   name: 'app',
   components: {
-    CardsList
+    DecksList
   }
 }
 </script>
