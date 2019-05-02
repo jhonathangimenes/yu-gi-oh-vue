@@ -16,7 +16,14 @@ export default {
 </script>
 <style>
 body {
-  background-color: #2f3542;
+  background-color: #576574;
+}
+.container {
+  background-color: #2f3542!important;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px #222f3e;
 }
 </style>
 

@@ -3,6 +3,7 @@
         <div class="col-md-4">
             <div class="row">
                 <div class="col-6" v-for="deck in decks" :key="deck.id">
+                    <h3>{{ deck.name }}</h3>
                     <div @click.prevent="checkDeck(deck)">
                         <template v-if="card != undefined">
                             <img v-if="findDeck(deck)" :src="require('../assets/cards/'+card)" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
@@ -31,7 +32,7 @@ export default {
             card: undefined,
             chosenDeck: {},
             decks:[
-                {id: 1, name: 'Deck 01', cards:[
+                {id: 1, name: 'Player #1', cards:[
                     {id: 1, name: 'Mystical Space Typhoon', img: '5318639.png'},
                     {id: 2, name: 'Pot of Dichotomy', img: '98672567.png'},
                     {id: 3, name: 'Mystacal Knight of Jackal', img: '98745000.png'},
@@ -47,7 +48,39 @@ export default {
                     {id: 14, name: 'Water Spirit', img: '487395.png'},
                     {id: 15, name: 'Superheavy Samurai Warlord Susanowo', img: '494922.png'}
                 ]},
-                {id: 2, name: 'Deck 02', cards:[
+                {id: 2, name: 'Player #2', cards:[
+                    {id: 1, name: 'Goblin Elite Attack Force', img: '85306040.png'},
+                    {id: 2, name: 'Ray & Temperature', img: '85309439.png'},
+                    {id: 3, name: 'Dododo Driver', img: '85310252.png'},
+                    {id: 4, name: 'Dark Lucius LV4', img: '85313220.png'},
+                    {id: 6, name: 'Spike Seadra', img: '85326399.png'},
+                    {id: 7, name: 'Paladin of Photon Dragon', img: '85346853.png'},
+                    {id: 8, name: 'Attention!', img: '85352446.png'},
+                    {id: 9, name: 'Freezing Beast', img: '85359414.png'},
+                    {id: 10, name: 'Super Quantum Green Layer', img: '85374678.png'},
+                    {id: 11, name: 'Harvest Angel of Wisdom', img: '85399281.png'},
+                    {id: 12, name: 'Evil Thorn', img: '85431040.png'},
+                    {id: 13, name: 'Zerozerock', img: '85446833.png'},
+                    {id: 14, name: 'Sentinel of the Seas', img: '85448931.png'},
+                    {id: 15, name: 'Ghostrick Ghoul', img: '85463083.png'}
+                ]},
+                {id: 3, name: 'Player #3', cards:[
+                    {id: 1, name: 'Goblin Elite Attack Force', img: '85306040.png'},
+                    {id: 2, name: 'Ray & Temperature', img: '85309439.png'},
+                    {id: 3, name: 'Dododo Driver', img: '85310252.png'},
+                    {id: 4, name: 'Dark Lucius LV4', img: '85313220.png'},
+                    {id: 6, name: 'Spike Seadra', img: '85326399.png'},
+                    {id: 7, name: 'Paladin of Photon Dragon', img: '85346853.png'},
+                    {id: 8, name: 'Attention!', img: '85352446.png'},
+                    {id: 9, name: 'Freezing Beast', img: '85359414.png'},
+                    {id: 10, name: 'Super Quantum Green Layer', img: '85374678.png'},
+                    {id: 11, name: 'Harvest Angel of Wisdom', img: '85399281.png'},
+                    {id: 12, name: 'Evil Thorn', img: '85431040.png'},
+                    {id: 13, name: 'Zerozerock', img: '85446833.png'},
+                    {id: 14, name: 'Sentinel of the Seas', img: '85448931.png'},
+                    {id: 15, name: 'Ghostrick Ghoul', img: '85463083.png'}
+                ]},
+                {id: 4, name: 'Player #4', cards:[
                     {id: 1, name: 'Goblin Elite Attack Force', img: '85306040.png'},
                     {id: 2, name: 'Ray & Temperature', img: '85309439.png'},
                     {id: 3, name: 'Dododo Driver', img: '85310252.png'},
@@ -82,12 +115,22 @@ export default {
     }
 }
 </script>
-
 <style>
-    .list-group-item {
-        background-color: #57606f!important;
-        color: #ffff;
-        border-color: #ced6e0;
+    .img-thumbnail {
+        box-shadow: 5px 5px 5px black!important;
+    }
+    h3 {
+        color: #f1f2f6!important; 
+    }
+    .col-6 {
+        margin-bottom: 10px!important;
+    }
+    img {
+        cursor: pointer;
+    }
+    img:hover {
+        transform: scale(1.02);
     }
 </style>
+
 
