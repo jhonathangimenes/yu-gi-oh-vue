@@ -1,30 +1,20 @@
 <template>
-    <div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-6" v-for="deck in decks" :key="deck.id">
-                        <div @click.prevent="chosenDeck = deck">
-                            <DeckItem :deck="deck">
-                                <template slot-scope="myCards">
-                                    <template v-for="cards in myCards">
-                                        <img :src="require('../assets/cards/'+cards.img)"
-                                        :key="cards.id"
-                                        v-if="cards.name == card"
-                                        class="img-thumbnail border-0 p-0"
-                                        alt="Imagem responsiva">            
-                                    </template>
-                                    
-                                </template>
-                            </DeckItem>
-                            <img v-show="card == undefined" src=".././assets/background-card.png" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
-                        </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-6" v-for="deck in decks" :key="deck.id">
+                    <div @click.prevent="checkDeck(deck)">
+                        <template v-if="card != undefined">
+                            <img v-if="findDeck(deck)" :src="require('../assets/cards/'+card)" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
+                            <img v-else src=".././assets/background-card.png" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
+                        </template>
+                        <img v-else src=".././assets/background-card.png" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
                     </div>
                 </div>
             </div>
-            <div class="col-md-8" v-if="chosenDeck != {}">
-                <DeckItem :deck="chosenDeck"/>
-            </div>
+        </div>
+        <div class="col-md-8" v-show="chosenDeck != {}">
+            <DeckItem :deck="chosenDeck"/>
         </div>
     </div>
 </template>
@@ -80,6 +70,15 @@ export default {
         EventBus.$on('chosenCard', (card) => {
             this.card = card
         })
+    },
+    methods: {
+        checkDeck(deck) {
+            this.card = deck.cards[0].img
+            this.chosenDeck = deck
+        },
+        findDeck(deck) {
+            return deck.cards.find(obj => obj.img == this.card)
+        }
     }
 }
 </script>

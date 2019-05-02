@@ -5,18 +5,18 @@
 </template>
 
 <script>
-import DecksList from './components/DecksList.vue'
+import DecksList from "./components/DecksList.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     DecksList
   }
 }
 </script>
 <style>
-  body {
-    background-color: #2f3542;
-  }
+body {
+  background-color: #2f3542;
+}
 </style>
 
