@@ -29,7 +29,7 @@ export default {
         background-color: #0c2461!important;
         color: #f1f2f6; 
         cursor: pointer;
-        font-size: 18px;
+        font-size: 17px;
     }
     li:hover {
         box-shadow: 5px 5px 5px #222f3e;
