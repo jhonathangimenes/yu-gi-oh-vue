@@ -6,10 +6,22 @@
                     <h3>{{ deck.name }}</h3>
                     <div @click.prevent="checkDeck(deck)">
                         <template v-if="card != undefined">
-                            <img v-if="findDeck(deck)" :src="require('../assets/cards/'+card)" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
-                            <img v-else src=".././assets/background-card.png" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
+                            <img v-if="findDeck(deck)"
+                                :src="require('../assets/cards/'+card)"
+                                class="img-thumbnail border-0 p-0" 
+                                alt="Imagem responsiva"
+                            >
+                            <img v-else 
+                                src=".././assets/background-card.png"
+                                class="img-thumbnail border-0 p-0"
+                                alt="Imagem responsiva"
+                            >
                         </template>
-                        <img v-else src=".././assets/background-card.png" class="img-thumbnail border-0 p-0" alt="Imagem responsiva">
+                        <img v-else 
+                            src=".././assets/background-card.png" 
+                            class="img-thumbnail border-0 p-0" 
+                            alt="Imagem responsiva"
+                        >
                     </div>
                 </div>
             </div>
@@ -22,7 +34,10 @@
             <template v-else>
                 <div class="text-center">
                     <h1>Escolha um Deck!</h1>
-                    <img src=".././assets/yu-gi.png" width="330" height="450" alt="Imagem responsiva">
+                    <img src=".././assets/yu-gi.png" 
+                        width="330" height="450" 
+                        alt="Imagem responsiva"
+                    >
                 </div>
             </template>
         </div>

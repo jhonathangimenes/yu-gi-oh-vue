@@ -2,7 +2,10 @@
     <div>
         <slot>
             <ul class="list-group">
-                <li class="list-group-item" @click.prevent="chosenCard(cards.img)">{{ cards.name }}</li>
+                <li class="list-group-item" 
+                @click.prevent="chosenCard(cards.img)"
+            >
+                {{ cards.name }}</li>
             </ul>
         </slot>
     </div>

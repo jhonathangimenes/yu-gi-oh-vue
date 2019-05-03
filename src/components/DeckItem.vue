@@ -2,7 +2,8 @@
     <div>
         <CardsList v-for="cards in deck.cards" 
             :cards="cards" 
-            :key="cards.id">
+            :key="cards.id"
+        >
             <slot :MyCards="cards"></slot>
         </CardsList>
     </div>
